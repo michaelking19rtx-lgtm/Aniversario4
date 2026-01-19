@@ -1,0 +1,189 @@
+/* FUENTES Y BASE */
+:root {
+    --primary-color: #ff9a9e;
+    --secondary-color: #fad0c4;
+    --text-color: #5d4037;
+    --white-glass: rgba(255, 255, 255, 0.7);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Quicksand', sans-serif; /* Fuente moderna y limpia */
+    background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); /* Degradado pastel */
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* EFECTO CRISTAL (REUTILIZABLE) */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px); /* El truco del vidrio borroso */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    padding: 30px;
+}
+
+/* PORTADA */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* Puedes poner una foto de fondo tuya aquí si quieres, o dejar el degradado */
+    background-image: url('img/fondo_portada.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.4); /* Un poco más blanco para leer mejor */
+}
+
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #d81b60;
+    margin: 10px 0;
+}
+
+.hero h2 { font-size: 1.5rem; color: #4a4a4a; margin-bottom: 20px; }
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #d81b60;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.4);
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover { transform: scale(1.05); background: #ad1457; }
+
+/* SECCIÓN CARTA */
+.section-light {
+    background: white;
+    padding: 20px 0 80px;
+    position: relative;
+}
+
+.letter-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 240, 245, 0.6); /* Tono rosita muy suave */
+}
+
+.letter-card p {
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.highlight-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #d81b60;
+    text-align: center !important;
+    margin: 30px 0;
+}
+
+.signature {
+    text-align: right !important;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #d81b60;
+    margin-top: 40px;
+}
+
+/* SECCIÓN FOTOS Y MÚSICA */
+.section-gradient {
+    background: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.white-text { color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+
+.title-cursive {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #d81b60;
+}
+
+.music-card {
+    max-width: 500px;
+    margin: -50px auto 50px; /* Sube un poco la tarjeta */
+    text-align: center;
+    background: rgba(255,255,255,0.8);
+}
+.music-card h3 { margin-bottom: 15px; color: #444; }
+
+/* GALERÍA MASONRY MODERNA */
+.gallery-masonry {
+    columns: 2; /* 2 columnas por defecto */
+    column-gap: 15px;
+    padding: 0 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+}
+
+.gallery-item:hover { transform: translateY(-5px) scale(1.02); }
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255,255,255,0.3);
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+    .gallery-masonry { columns: 3; } /* 3 columnas en PC */
+    .hero h1 { font-size: 6rem; }
+}
+
+/* SVG WAVES */
+.wave-bottom, .wave-top {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.wave-bottom { bottom: 0; }
+.wave-top { top: 0; }
+.wave-bottom svg, .wave-top svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px; /* Altura de la ola */
+}
